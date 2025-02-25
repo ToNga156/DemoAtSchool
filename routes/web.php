@@ -49,3 +49,7 @@ Route::get('/postcreate', [PostController::class, 'create']);
 //btvn
 Route::get('/signup', [signupController::class, 'index']);
 Route::post('/signup', [signupController::class, 'displayInfor']);
+
+//
+use App\Http\Controllers\ProductController;		
+Route::resource('products', ProductController::class);		
