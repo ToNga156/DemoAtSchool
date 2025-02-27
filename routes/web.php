@@ -18,6 +18,7 @@ use App\Http\Controllers\ControllerNotView;
 use App\Http\Controllers\ControllerVidu3;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\signupController;
+use App\Http\Controllers\PageController;
 
 Route::get('/tong', [ControllerTong::class, 'tong']); 
 Route::post('/tong', [ControllerTong::class, 'tinhTong']);
@@ -49,3 +50,6 @@ Route::get('/postcreate', [PostController::class, 'create']);
 //btvn
 Route::get('/signup', [signupController::class, 'index']);
 Route::post('/signup', [signupController::class, 'displayInfor']);
+
+//btvn
+Route::get('index', [PageController::class, 'getIndex']);
