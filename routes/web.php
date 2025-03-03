@@ -18,6 +18,7 @@ use App\Http\Controllers\ControllerNotView;
 use App\Http\Controllers\ControllerVidu3;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\signupController;
+use App\Http\Controllers\CovidController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomepageController;
 use Illuminate\Database\Schema\Blueprint;
@@ -55,6 +56,8 @@ Route::get('/postcreate', [PostController::class, 'create']);
 Route::get('/signup', [signupController::class, 'index']);
 Route::post('/signup', [signupController::class, 'displayInfor']);
 
+//covid
+Route::get('/covid', [CovidController::class, 'getData']);
 //btvn
 Route::get('index', [PageController::class, 'getIndex']);
 
