@@ -19,6 +19,10 @@ use App\Http\Controllers\ControllerVidu3;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\signupController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\HomepageController;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+use App\Http\Controllers\CreateTableController;
 
 Route::get('/tong', [ControllerTong::class, 'tong']); 
 Route::post('/tong', [ControllerTong::class, 'tinhTong']);
@@ -53,3 +57,25 @@ Route::post('/signup', [signupController::class, 'displayInfor']);
 
 //btvn
 Route::get('index', [PageController::class, 'getIndex']);
+
+//cut layouts shopee
+Route::get('homepage', [HomepageController::class, 'getIndex']);
+
+//Database
+Route::get('database', function() {
+    Schema::create('loaisanpham', function(Blueprint $table) {
+        $table->increments('id');
+        $table->string('name', 200);
+    });
+    echo "Da thuc hien lenh tao bang thanh cong";
+});
+
+Route::get('update-database', function() {
+    Schema::table('loaisanpham', function(Blueprint $table) {
+        $table->integer('price');
+        $table->string('image')->nullable(); 
+    });
+    echo "Da thuc hien lenh cap nhat thanh cong";
+});
+
+Route::get('create', [CreateTableController::class, 'createProductsTable']);
