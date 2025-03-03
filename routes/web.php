@@ -24,6 +24,7 @@ use App\Http\Controllers\HomepageController;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\CreateTableController;
+use App\Http\Controllers\CreateTable;
 
 Route::get('/tong', [ControllerTong::class, 'tong']); 
 Route::post('/tong', [ControllerTong::class, 'tinhTong']);
@@ -82,3 +83,6 @@ Route::get('update-database', function() {
 });
 
 Route::get('create', [CreateTableController::class, 'createProductsTable']);
+
+//btvn create tables for selling web
+Route::get('createTable', [CreateTable::class, 'create_Table']);
