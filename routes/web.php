@@ -19,6 +19,7 @@ use App\Http\Controllers\ControllerVidu3;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\signupController;
 use App\Http\Controllers\CovidController;
+use App\Http\Controllers\PageController;
 
 Route::get('/tong', [ControllerTong::class, 'tong']); 
 Route::post('/tong', [ControllerTong::class, 'tinhTong']);
@@ -53,3 +54,5 @@ Route::post('/signup', [signupController::class, 'displayInfor']);
 
 //covid
 Route::get('/covid', [CovidController::class, 'getData']);
+//btvn
+Route::get('index', [PageController::class, 'getIndex']);
