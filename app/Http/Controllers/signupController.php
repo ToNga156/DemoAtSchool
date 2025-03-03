@@ -13,6 +13,7 @@ class signupController extends Controller
         return view('signup');
     }
     public function displayInfor(signupRequest $Request) {
+        $userSession = session('userSession',[]);
         $user = [
             'name' => $name = $Request -> input("name"),
             'age' => $age = $Request -> input("age"),
@@ -21,6 +22,8 @@ class signupController extends Controller
             'web' => $web = $Request -> input("web"),
             'address' => $address = $Request -> input("address")
         ];
-        return view('signup')->with('user', $user);
+        $userSession[] = $user;
+        session(['userSession' => $userSession]);
+        return view('signup')->with('userSession', $userSession);
     }
 }
