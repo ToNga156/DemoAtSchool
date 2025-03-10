@@ -19,5 +19,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Gọi seeder cho categories và products
+        $this->call([
+            CategoriesTableSeeder::class,
+            ProductNewTableSeeder::class,
+        ]);
     }
 }
